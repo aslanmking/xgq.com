@@ -1,0 +1,18 @@
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+
+//gulp.task(taskname,callback)部署任务
+
+
+gulp.task("copyindex",()=>{
+    return gulp.src('./src/html/index.html').pipe(gulp.dest('./dist/html'))
+})
+
+
+
+gulp.task('renameindex', () => {
+    return gulp.src('./src/html/index.html')
+        .pipe(rename('index.min.html'))
+        .pipe(gulp.dest('./dist/html'));
+})
+
